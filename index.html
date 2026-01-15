@@ -1,145 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saumya Chitrakar | BCA @ TU</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        
+        body {
+            /* Discord-style Dark Charcoal Grey */
+            background-color: #0d1117;
+            background-image: radial-gradient(circle at 50% -20%, #161b22 0%, #0d1117 100%);
+            min-height: 100vh;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
 
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-  <link rel="stylesheet" href="./packages/css/swiper-bundle.min.css">
-  <link rel="stylesheet" href="./packages/css/styles.css">
+        /* Subtle Background Animation */
+        .bg-glow {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: 0;
+        }
 
-  <title>Saumya</title>
+        .glass {
+            background: rgba(22, 27, 34, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
 
+        .glass:hover {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(22, 27, 34, 0.8);
+        }
+
+        /* --- DISCORD NITRO ANIMATED BORDER --- */
+        .nitro-wrapper {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            overflow: hidden;
+            padding: 4px; 
+            z-index: 1;
+        }
+
+        .nitro-wrapper::before {
+            content: '';
+            position: absolute;
+            width: 160%;
+            height: 160%;
+            background: conic-gradient(from 180deg, #ff00d0, #00d4ff, #7000ff, #ff00d0);
+            animation: rotate 4s linear infinite;
+        }
+
+        .profile-img {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #0d1117; /* Matches background to create gap */
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
 </head>
-<body>
-  <!-- ==== NAVIGATION ==== -->
-  <header class="header" id="header">
-    <nav class="nav container">
-      <a href="#" class="nav__logo">Saumya Chitrakar</a>
-      <ul class="nav__list grid">
-        <li><a href="#home" class="nav__link">Home</a></li>
-        <li><a href="#about" class="nav__link">About</a></li>
-        <li><a href="#skills" class="nav__link">Skills</a></li>
-        <li><a href="#portfolio" class="nav__link">Projects</a></li>
-        <li><a href="#contact" class="nav__link">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<body class="text-gray-200 flex flex-col items-center p-6 relative">
+    <div class="bg-glow"></div>
 
-  <!-- ==== MAIN ==== -->
-  <main class="main">
-    <!-- ==== HOME ==== -->
-    <section class="home section" id="home">
-      <div class="home__container">
-        <div class="home__data">
-          <div class="home__social">
-            <a href="https://github.com/sauch0" target="_blank" class="home__social-icon"><i class="uil uil-github-alt"></i></a>
-            <a href="https://instagram.com/shiroiyukii_/" target="_blank" class="home__social-icon"><i class="uil uil-instagram"></i></a>
-            <a href="https://x.com/shiroii_yukii" target="_blank" class="home__social-icon"><i class="uil uil-twitter"></i></a>
-          </div>
-          <h1>Hi, I'm Saumya</h1>
-          <h3 class="home__subtitle">BCA Student | Aspiring Developer</h3>
-          <p class="home__description">
-            Passionate about coding and web development. I’ve built my first project, an e-commerce website, and I’m excited to keep learning and growing in tech.
-          </p>
-          <a href="#contact" class="button">Contact Me</a>
+    <div class="z-10 w-full max-w-md flex flex-col items-center">
+        
+        <div class="mt-12 flex flex-col items-center text-center">
+            <div class="nitro-wrapper shadow-[0_0_30px_rgba(112,0,255,0.3)] mb-6">
+                <img src="https://imgs.search.brave.com/JNgJ7uPlIxfySw5dR05vv7X8tFXcX76D517hYs26hJU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2I0LzM3/L2JhL2I0MzdiYWUy/ZWNlMTlmN2M1ZDRh/YjUxMTNkNDRhMzkz/LmpwZw" alt="Saumya" class="profile-img">
+            </div>
+            
+            <h1 class="text-3xl font-extrabold gradient-text tracking-tight">Saumya Chitrakar</h1>
+            <p class="text-gray-400 mt-2 font-medium">BCA Student @ TU</p>
         </div>
-        <div class="home__img-container">
-          <img src="packages/images/image1.jpeg" alt="Profile" class="home__profile-img">
-        </div>
-      </div>
-    </section>
 
-    <!-- ==== ABOUT ==== -->
-    <section class="about section" id="about">
-      <h2 class="section__title">About Me</h2>
-      <span class="section__subtitle">My Introduction</span>
-      <div class="about__container">
-        <img src="packages/images/image2.jpeg" alt="About Image" class="about__img">
-        <div class="about__data">
-          <p>
-            I am a BCA student passionate about web development and programming. I enjoy learning HTML, CSS, JavaScript, PHP, and exploring backend development with C# and Java. I’ve built my first e-commerce project ‘Shopesp’ using XAMPP, PHP, and JavaScript, and I’m excited to grow my skills further.
-          </p>
-        </div>
-      </div>
-    </section>
+        <div class="w-full mt-8 space-y-4">
+            
+            <div class="glass p-5 rounded-3xl">
+                <h3 class="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 mb-3">Learning Journey</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-cyan-500/10 text-cyan-400 px-3 py-1.5 rounded-xl text-xs font-bold border border-cyan-500/20">
+                        <i class="fab fa-react mr-1"></i> React
+                    </span>
+                    <span class="bg-orange-500/10 text-orange-400 px-3 py-1.5 rounded-xl text-xs font-bold border border-orange-500/20">
+                        <i class="fab fa-java mr-1"></i> Java
+                    </span>
+                    <span class="bg-blue-500/10 text-blue-400 px-3 py-1.5 rounded-xl text-xs font-bold border border-blue-500/20">Web Dev</span>
+                </div>
+            </div>
 
-    <!-- ==== SKILLS ==== -->
-    <section class="skills section" id="skills">
-      <h2 class="section__title">Skills</h2>
-      <span class="section__subtitle">Technologies I've Learned</span>
-      <div class="skills__container">
-        <div class="skills__content">
-          <h3>Frontend Development</h3>
-          <div class="skills__data"><i class="uil uil-check-circle skills__check-icon"></i>HTML</div>
-          <div class="skills__data"><i class="uil uil-check-circle skills__check-icon"></i>CSS</div>
-          <div class="skills__data"><i class="uil uil-check-circle skills__check-icon"></i>JavaScript</div>
-        </div>
-        <div class="skills__content">
-          <h3>Backend & Other</h3>
-          <div class="skills__data"><i class="uil uil-check-circle skills__check-icon"></i>PHP</div>
-          <div class="skills__data"><i class="uil uil-check-circle skills__check-icon"></i>C#</div>
-          <div class="skills__data"><i class="uil uil-check-circle skills__check-icon"></i>Java</div>
-        </div>
-      </div>
-    </section>
+            <a href="https://www.instagram.com/xyyzzzz1_?igsh=aW11bmhteDk5b252" class="glass w-full py-4 px-6 rounded-2xl flex items-center justify-between group">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-pink-500/10 flex items-center justify-center">
+                        <i class="fab fa-instagram text-pink-500"></i>
+                    </div>
+                    <span class="font-bold">Instagram</span>
+                </div>
+                <i class="fas fa-arrow-right text-gray-700 group-hover:text-white transition-colors"></i>
+            </a>
 
-    <!-- ==== QUALIFICATION ==== -->
-    <section class="qualification section" id="qualification">
-      <h2 class="section__title">Qualification</h2>
-      <span class="section__subtitle">My personal journey</span>
-      <div class="qualification__timeline">
-        <div class="qualification__item"><div class="qualification__rounder"></div>SEE - Passed</div>
-        <div class="qualification__item"><div class="qualification__rounder"></div>+2 - Passed</div>
-        <div class="qualification__item"><div class="qualification__rounder"></div>BCA - Studying</div>
-      </div>
-    </section>
+            <a href="https://github.com/sauch0" class="glass w-full py-4 px-6 rounded-2xl flex items-center justify-between group">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center">
+                        <i class="fab fa-github text-white"></i>
+                    </div>
+                    <span class="font-bold">GitHub</span>
+                </div>
+                <i class="fas fa-arrow-right text-gray-700 group-hover:text-white transition-colors"></i>
+            </a>
 
-    <!-- ==== PORTFOLIO ==== -->
-    <section class="portfolio section" id="portfolio">
-      <h2 class="section__title">Projects</h2>
-      <span class="section__subtitle">Projects I have worked on</span>
-      <div class="portfolio__content">
-        <img src="packages/images/project1.jpg" alt="Shopesp Project" class="portfolio__img">
-        <h3>Shopesp - E-commerce Website</h3>
-        <p>An e-commerce website built with XAMPP, PHP, HTML, CSS, and JavaScript.</p>
-        <a href="https://github.com/sauch0/Shopesp" target="_blank" class="button">View on GitHub</a>
-      </div>
-    </section>
+            <button id="shareBtn" class="w-full bg-white text-black font-extrabold py-4 rounded-2xl hover:bg-blue-400 hover:text-white transition-all duration-300 shadow-xl flex items-center justify-center gap-2 mt-4">
+                <i class="fas fa-paper-plane"></i> Share Profile
+            </button>
 
-    <!-- ==== CONTACT ==== -->
-    <section class="contact section" id="contact">
-      <h2 class="section__title">Contact me</h2>
-      <span class="section__subtitle">Get in touch</span>
-      <div class="contact__container">
-        <div class="contact__information">
-          <i class="uil uil-envelope contact__icon"></i>
-          <div>
-            <h3>Email</h3>
-            <span>chitrakarsaumya2004@gmail.com</span>
-          </div>
         </div>
-        <div class="contact__information">
-          <i class="uil uil-map-marker contact__icon"></i>
-          <div>
-            <h3>Location</h3>
-            <span>Kathmandu, Nepal</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
 
-  <!-- ==== FOOTER ==== -->
-  <footer class="footer">
-    <h1 class="footer__title">Saumya Chitrakar</h1>
-    <span class="footer__subtitle">BCA Student | Web Developer</span>
-    <div class="footer__socials">
-      <a href="https://github.com/sauch0" target="_blank" class="footer__social"><i class="uil uil-github-alt"></i></a>
-      <a href="https://instagram.com/shiroiyukii_" target="_blank" class="footer__social"><i class="uil uil-instagram"></i></a>
-      <a href="https://x.com/shiroii_yukii" target="_blank" class="footer__social"><i class="uil uil-twitter"></i></a>
+        <footer class="mt-20 pb-10 text-center">
+            <p class="text-gray-600 text-[10px] uppercase tracking-widest font-bold flex items-center gap-2">
+                Saumya Chitrakar<span class="w-1 h-1 bg-gray-600 rounded-full"></span> 2026
+            </p>
+        </footer>
     </div>
-    <p class="footer__copy">&#169; 2025 Saumya. All rights reserved.</p>
-  </footer>
+
+    <script>
+        document.getElementById('shareBtn').addEventListener('click', () => {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Saumya Chitrakar Portfolio',
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link copied to clipboard!');
+            }
+        });
+    </script>
 </body>
 </html>
