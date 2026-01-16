@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Amina!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;800&display=swap');
+        body {
+            background-color: #0d1117;
+            background-image: radial-gradient(circle at 50% 50%, #1a1033 0%, #0d1117 100%);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: white;
+        }
+        .confetti { position: fixed; font-size: 20px; animation: fall 3s linear infinite; }
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+    <div class="max-w-md w-full text-center space-y-8">
+        <div class="text-6xl animate-bounce">🎂</div>
+        
+        <h1 class="text-5xl font-extrabold bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">
+            Happy Birthday, Amina!
+        </h1>
+        
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl shadow-2xl">
+            <p class="text-gray-300 leading-relaxed text-lg">
+                "To a great friend—wishing you a year filled with amazing code, 
+                great adventures, and all the success you deserve!"
+            </p>
+            <div class="mt-6 pt-6 border-t border-white/10 text-sm text-pink-400 font-bold uppercase tracking-widest">
+                From Saumya
+            </div>
+        </div>
+
+        <button onclick="addConfetti()" class="px-8 py-3 bg-pink-600 hover:bg-pink-500 rounded-full font-bold transition-all shadow-lg shadow-pink-500/20">
+            Celebrate! 🎉
+        </button>
+    </div>
+
+    <script>
+        function addConfetti() {
+            for(let i=0; i<20; i++) {
+                const c = document.createElement('div');
+                c.className = 'confetti';
+                c.innerText = ['✨', '🎈', '🌸', '💖'][Math.floor(Math.random()*4)];
+                c.style.left = Math.random() * 100 + 'vw';
+                c.style.top = '-20px';
+                c.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                document.body.appendChild(c);
+                setTimeout(() => c.remove(), 3000);
+            }
+        }
+    </script>
+</body>
+</html>
