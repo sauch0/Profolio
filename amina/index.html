@@ -14,8 +14,8 @@
             background-image: radial-gradient(circle at 50% -20%, #161b22 0%, #0d1117 100%);
             min-height: 100vh;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow-x: hidden;
             color: white;
+            overflow-x: hidden;
         }
 
         .glass {
@@ -58,7 +58,16 @@
 </head>
 <body class="flex flex-col items-center justify-center p-6 min-h-screen">
 
-    <div id="slide1" class="slide active flex-col items-center text-center max-w-md w-full">
+    <div id="slide0" class="slide active flex-col items-center text-center max-w-md w-full">
+        <div class="text-7xl mb-6 animate-bounce">🎁</div>
+        <h1 class="text-3xl font-extrabold mb-4">For Amina...</h1>
+        <p class="text-gray-400 mb-8 font-medium italic">I made something small for your special day.</p>
+        <button onclick="nextSlide(1)" class="glass px-10 py-4 rounded-2xl font-extrabold hover:bg-white/10 transition-all border border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+            Open it <i class="fas fa-heart ml-2 text-pink-500"></i>
+        </button>
+    </div>
+
+    <div id="slide1" class="slide flex-col items-center text-center max-w-md w-full">
         <div class="text-7xl mb-6 budi-shake">🧓</div>
         <h1 class="text-3xl font-extrabold mb-4">Happy Birthday Amina! 🥳🥳</h1>
         <p class="text-xl text-gray-400">Congrats on becoming a <span class="text-white font-bold">budi aaimai</span> now hahahahaha</p>
@@ -75,8 +84,8 @@
                 <span class="text-orange-400 font-bold">One Piece</span> story you had and I replied to it.
             </p>
             
-            <div class="w-full aspect-video bg-white/5 rounded-xl border-2 border-dashed border-white/10 flex items-center justify-center overflow-hidden">
-                <img src="YOUR_MEME_IMAGE_URL_HERE" alt="Zehahahaha Meme" class="w-full h-full object-contain">
+            <div class="w-full aspect-video bg-white/5 rounded-xl border-2 border-dashed border-white/10 flex items-center justify-center overflow-hidden relative">
+                <img src="YOUR_IMAGE_LINK_HERE" alt="" class="w-full h-full object-contain">
                 <i class="fas fa-image text-white/20 text-4xl absolute"></i>
             </div>
             
@@ -90,14 +99,14 @@
     <div id="slide3" class="slide flex-col items-center text-center max-w-md w-full">
         <div class="glass p-8 rounded-3xl w-full border-pink-500/20">
             <div class="w-12 h-12 bg-pink-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i class="fas fa-heart text-pink-500"></i>
+                <i class="fas fa-pen-nib text-pink-500"></i>
             </div>
             <p class="text-lg leading-relaxed">
                 I have a short message for you. <br><br>
                 It’s <span class="text-white font-bold underline">not AI generated</span>. I wrote it from my heart, so you better read it properly.
             </p>
         </div>
-        <button onclick="nextSlide(4)" class="mt-8 bg-white text-black px-10 py-3 rounded-2xl font-extrabold hover:bg-pink-500 hover:text-white transition-all">
+        <button onclick="nextSlide(4)" class="mt-8 bg-white text-black px-10 py-3 rounded-2xl font-extrabold hover:bg-pink-500 hover:text-white transition-all shadow-xl">
             Read Message
         </button>
     </div>
@@ -108,7 +117,7 @@
             
             <h1 class="text-3xl font-extrabold gradient-text mb-6">Happy Birthday Amina!</h1>
             
-            <div class="space-y-4 text-gray-300 leading-relaxed text-sm md:text-base">
+            <div class="space-y-4 text-gray-300 leading-relaxed text-sm md:text-base text-left">
                 <p>I know I’m bad at communication and expressing my feelings and we haven't been as close as we used to be and it feels like were drifting apart lately, but still I wanted you to know how much I still value you and our friendship.</p>
                 
                 <p>I still remember the day we first started talking, ever since that day you've been a <span class="text-white font-bold">HUGE</span> part of my life. I still remember I replied to your One Piece story to start talking and you repied with that zehahahahhaha meme with oda in blackbeard ko luga and then you suddenly started interviewing me which was the day our friedship started, and nothing changes that.</p>
@@ -122,7 +131,7 @@
                     <p class="text-gray-400 text-xs">You 10/10 manxe born on 10/10</p>
                 </div>
 
-                <p class="pt-4">You deserve all best things in the world and Once again Happy Birthday you <span class="text-pink-400 font-bold">"smalll pudki raini manxe🤫"</span>.</p>
+                <p class="pt-4 text-center">You deserve all best things in the world and Once again Happy Birthday you <span class="text-pink-400 font-bold">"smalll pudki raini manxe🤫"</span>.</p>
             </div>
         </div>
 
@@ -133,6 +142,7 @@
 
     <script>
         function nextSlide(n) {
+            // Smoothly switch slides
             document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
             document.getElementById('slide' + n).classList.add('active');
             window.scrollTo(0, 0);
