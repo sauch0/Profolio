@@ -3,211 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Amina | Happy Birthday</title>
+    <title>For Amina</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Dancing+Script:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
         
         body {
-            background: #05070a;
-            color: white;
+            background-color: #0a0a0c;
+            color: #e2e8f0;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow: hidden;
-            min-height: 100vh;
-        }
-
-        /* Cinematic Background */
-        .bg-canvas {
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            background: radial-gradient(circle at 50% 50%, #1a1033 0%, #05070a 100%);
-        }
-
-        .stars {
-            position: absolute;
-            width: 1px; height: 1px;
-            background: transparent;
-            box-shadow: 24vw 10vh #fff, 65vw 30vh #fff, 12vw 80vh #fff, 80vw 20vh #fff, 40vw 50vh #fff;
-            animation: twinkle 5s infinite;
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.8; }
-        }
-
-        /* Mesh Gradients */
-        .aura {
-            position: absolute;
-            width: 60vw; height: 60vw;
-            border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.15;
-            z-index: -1;
-            animation: pulse 10s infinite alternate;
-        }
-
-        @keyframes pulse {
-            from { transform: scale(1); }
-            to { transform: scale(1.2); }
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
-            border-radius: 2rem;
-        }
-
-        .slide {
-            display: none;
-            flex-direction: column;
+            margin: 0;
+            display: flex;
             align-items: center;
             justify-content: center;
-            width: 100%;
-            max-width: 600px;
-            animation: reveal 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-        }
-
-        .slide.active { display: flex; }
-
-        @keyframes reveal {
-            from { opacity: 0; transform: scale(0.9) translateY(30px); filter: blur(10px); }
-            to { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
-        }
-
-        .gradient-text {
-            background: linear-gradient(to right, #fff, #a5b4fc, #f472b6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Buttons */
-        .btn-premium {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.4s ease;
-            position: relative;
+            min-height: 100vh;
             overflow: hidden;
         }
 
-        .btn-premium:hover {
-            background: white;
-            color: black;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
+        /* Simplified Background - No Lag */
+        .bg-gradient {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, #111118 0%, #0a0a0c 100%);
+            z-index: -1;
         }
 
-        .budi-shake { animation: shake 1s infinite ease-in-out; }
-        @keyframes shake {
-            0%, 100% { transform: translateY(0) rotate(0); }
-            50% { transform: translateY(-10px) rotate(5deg); }
+        .glass {
+            background: rgba(23, 23, 27, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
         }
 
-        .letter-scroll::-webkit-scrollbar { width: 3px; }
-        .letter-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+        /* Smooth, simple fade-in */
+        .slide {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn {
+            background: #ffffff;
+            color: #000000;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease, background 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:active {
+            transform: scale(0.96);
+        }
+
+        .letter-container {
+            max-height: 60vh;
+            overflow-y: auto;
+            padding-right: 8px;
+        }
+
+        .letter-container::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .letter-container::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .budi-emoji {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
-<body class="flex items-center justify-center p-6">
+<body>
 
-    <div class="bg-canvas">
-        <div class="stars"></div>
-        <div class="aura bg-purple-600 top-[-10%] left-[-10%]"></div>
-        <div class="aura bg-pink-600 bottom-[-10%] right-[-10%]"></div>
+    <div class="bg-gradient"></div>
+
+    <div id="slide0" class="slide active items-center text-center">
+        <div class="text-6xl mb-6">🎁</div>
+        <h1 class="text-2xl font-bold mb-2 text-white">For Amina</h1>
+        <p class="text-gray-400 mb-8">A small message for your special day.</p>
+        <button onclick="nextSlide(1)" class="btn">Open it</button>
     </div>
 
-    <div id="slide0" class="slide active">
-        <div class="glass-card p-12 text-center w-full">
-            <div class="text-7xl mb-8 opacity-90 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">🎁</div>
-            <h1 class="text-4xl font-extrabold tracking-tighter mb-4">For Amina...</h1>
-            <p class="text-gray-400 font-light tracking-widest text-sm mb-10">A DIGITAL ENVELOPE FOR YOU</p>
-            <button onclick="nextSlide(1)" class="btn-premium px-12 py-4 rounded-full font-bold tracking-widest text-xs">
-                OPEN ENVELOPE
-            </button>
-        </div>
+    <div id="slide1" class="slide items-center text-center px-4">
+        <div class="budi-emoji">🧓</div>
+        <h2 class="text-3xl font-bold mb-4 text-white">Happy Birthday!</h2>
+        <p class="text-lg text-gray-400 mb-8 leading-relaxed">
+            Congrats on becoming a <br>
+            <span class="text-white font-bold text-2xl italic">budi aaimai</span> now hahahahaha! 👵
+        </p>
+        <button onclick="nextSlide(2)" class="btn bg-transparent border border-white/20 !text-white">Next</button>
     </div>
 
-    <div id="slide1" class="slide">
-        <div class="text-8xl mb-8 budi-shake">🧓</div>
-        <h2 class="text-4xl font-extrabold mb-6 gradient-text">Happy Birthday!</h2>
-        <div class="glass-card p-8 text-center border-purple-500/30">
-            <p class="text-xl text-gray-300">Congrats on becoming a <br>
-            <span class="text-white font-black text-3xl block mt-2">budi aaimai</span> now hahahahaha! 👵</p>
-        </div>
-        <button onclick="nextSlide(2)" class="mt-12 btn-premium px-10 py-3 rounded-full text-xs font-bold">
-            CONTINUE →
-        </button>
-    </div>
-
-    <div id="slide2" class="slide">
-        <div class="glass-card p-10 text-center relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-pink-500 to-transparent opacity-50"></div>
-            <p class="text-lg text-gray-200 mb-8 leading-relaxed">
+    <div id="slide2" class="slide items-center text-center px-4">
+        <div class="glass p-8 w-full border-pink-500/20">
+            <p class="text-lg text-gray-200 mb-6 leading-relaxed">
                 My dumbass didn't know what to do for your birthday so, I wrote a short message for you.
             </p>
-            <div class="flex items-center justify-center gap-4 text-xs font-black tracking-[0.3em] text-pink-500">
-                <span class="w-8 h-[1px] bg-pink-500/30"></span>
-                NOT AI GENERATED
-                <span class="w-8 h-[1px] bg-pink-500/30"></span>
-            </div>
-            <p class="mt-6 text-sm text-gray-500 font-light">I wrote it myself from my heart, so you better read it properly.</p>
+            <p class="text-xs font-bold tracking-widest text-pink-500 mb-2 underline decoration-pink-500/30">NOT AI GENERATED</p>
+            <p class="text-sm text-gray-500">I wrote it myself from my heart, so you better read it properly.</p>
         </div>
-        <button onclick="nextSlide(3)" class="mt-10 btn-premium bg-white !text-black px-12 py-4 rounded-full font-black text-xs">
-            READ THE LETTER
-        </button>
+        <button onclick="nextSlide(3)" class="btn mt-8 w-full">Read Message</button>
     </div>
 
-    <div id="slide3" class="slide max-w-2xl">
-        <div class="glass-card p-8 md:p-12 w-full border-white/5 relative">
-            <div class="absolute top-0 right-0 p-4 opacity-20 text-4xl italic font-serif">A</div>
-            
-            <header class="mb-10 text-center">
-                <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight mb-2">Happy Birthday Amina!</h1>
-                <div class="h-1 w-12 bg-pink-500 mx-auto rounded-full"></div>
+    <div id="slide3" class="slide px-4">
+        <div class="glass p-8 w-full">
+            <header class="mb-6 pb-4 border-b border-white/5">
+                <h1 class="text-xl font-bold text-white">Happy Birthday Amina!</h1>
             </header>
             
-            <div class="letter-scroll space-y-6 text-gray-300 leading-relaxed text-sm md:text-base overflow-y-auto max-h-[55vh] pr-4 custom-scrollbar">
+            <div class="letter-container text-gray-300 leading-relaxed text-sm md:text-base space-y-5">
                 <p>I know I’m bad at communication and expressing my feelings and we haven't been as close as we used to be and it feels like were drifting apart lately, but I wanted you to know how much I still value you and our friendship.</p>
                 
-                <p>I don't know if you still remember the day we first actually stated talking. I had replied to your facebook story related to one piece story with <span class="text-pink-300 font-semibold italic">"Umaru chan your a pirate too?"</span> and you replied with something like ayyy or arrrr with a <span class="text-white font-bold underline decoration-blue-500">Zehahaha meme</span> of Oda in Blackbeard ko luga. Ani after that you started asking me random questions like my age and studies like you we interviewing me cus you were just about join BBS at that time and you were curious about Business studies. All that might sound kinda weird, cringe or silly to you now but that same silliness of yours is what made me interested in you and it still does.</p>
+                <p>I don't know if you still remember the day we first actually stated talking. I had replied to your facebook story related to one piece story with <span class="text-white font-semibold">"Umaru chan your a pirate too?"</span> and you replied with something like ayyy or arrrr with a Zehahahaha meme of Oda in Blackbeard ko luga. Ani after that you started asking me random questions like my age and studies like you we interviewing me cus you were just about join BBS at that time and you were curious about Business studies. All that might sound kinda weird, cringe or silly to you now but that same silliness of yours is what made me interested in you and it still does.</p>
                 
-                <p>It's been a long time since that day and a lot has happened in these 4+ years. A lot of laughs, cries, panic and stress and we have come a long way since that day. You may not realize it but since that day you have been a <span class="text-white font-bold border-b border-white/20">HUGE part of my life.</span></p>
+                <p>It's been a long time since that day and a lot has happened in these 4+ years. A lot of laughs, cries, panic and stress and we have come a long way since that day. You may not realize it but since that day you have been a <span class="text-white font-bold">HUGE part of my life.</span></p>
                 
-                <p class="text-white font-semibold italic border-l-2 border-pink-500 pl-4 py-1">
+                <p class="border-l-2 border-white/20 pl-4 italic text-gray-400">
                     If i could go back in time I would still choose to reply to that story in any timeline.
                 </p>
                 
-                <p>I think this is getting longer than I thought so, in the end I just wanted to say you are still the person who I value a <strong class="text-white uppercase">Lottt</strong> and <strong class="text-white uppercase">Cherish</strong> in my life and someone who I never want to lose and I hope that no matter what happens we never end up in a bad term and go our seperate ways cus you are most nicest, honest, and most trustable person i have met till now.</p>
+                <p>I think this is getting longer than I thought so, in the end I just wanted to say you are still the person who I value a <strong>LOTTT</strong> and <strong>CHERISH</strong> in my life and someone who I never want to lose. You are most nicest, honest, and most trustable person i have met till now.</p>
                 
-                <div class="bg-white/5 p-6 rounded-2xl border border-white/10 text-center space-y-1">
-                    <p class="text-white font-black text-xl tracking-tight">Hope you have a 10/10 day today</p>
-                    <p class="text-pink-400 font-bold text-sm tracking-widest">You 10/10 manxe born on 10/10</p>
+                <div class="bg-white/5 p-4 rounded-xl text-center">
+                    <p class="text-white font-bold">Hope you have a 10/10 day today</p>
+                    <p class="text-gray-400 text-xs">You 10/10 manxe born on 10/10</p>
                 </div>
 
-                <p class="pt-4 text-center text-gray-100">
-                    You deserve all best things in the world and Once again Happy Birthday you <span class="text-pink-400 font-bold italic">"smolll pudki raini manxe"</span> and Thanks for spawning in this world and in my life.
+                <p class="pt-2 text-center">
+                    You deserve all best things in the world and Once again Happy Birthday you <span class="text-white font-bold">"smolll pudki raini manxe"</span> and Thanks for spawning in this world and in my life.
                 </p>
 
-                <div class="pt-8 flex flex-col items-end">
-                    <p class="text-[10px] text-gray-500 tracking-[0.4em] mb-1 uppercase">Message by</p>
-                    <p class="font-serif text-2xl text-white font-semibold italic" style="font-family: 'Dancing Script', cursive;">Aguma the great.</p>
+                <div class="pt-6 text-right">
+                    <p class="text-xs text-gray-500">Message by:</p>
+                    <p class="font-bold text-white italic">Aguma the great.</p>
                 </div>
             </div>
         </div>
 
-        <button onclick="location.reload()" class="mt-8 opacity-40 hover:opacity-100 transition-opacity flex items-center gap-2 text-[10px] font-black tracking-widest">
-            <i class="fas fa-redo-alt"></i> REPLAY EXPERIENCE
+        <button onclick="location.reload()" class="mt-6 text-xs text-gray-600 hover:text-gray-400 self-center">
+            <i class="fas fa-redo mr-1"></i> Restart
         </button>
     </div>
 
     <script>
         function nextSlide(n) {
-            document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
-            document.getElementById('slide' + n).classList.add('active');
-            window.scrollTo({top: 0, behavior: 'smooth'});
+            const currentSlide = document.querySelector('.slide.active');
+            const nextSlide = document.getElementById('slide' + n);
+            
+            if (currentSlide) {
+                currentSlide.style.opacity = '0';
+                currentSlide.style.transform = 'translateY(-10px)';
+                setTimeout(() => {
+                    currentSlide.classList.remove('active');
+                    nextSlide.classList.add('active');
+                    // Trigger reflow
+                    nextSlide.offsetHeight;
+                    nextSlide.style.opacity = '1';
+                    nextSlide.style.transform = 'translateY(0)';
+                }, 300);
+            }
         }
     </script>
 </body>
