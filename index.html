@@ -3,169 +3,461 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saumya Chitrakar | BCA @ TU</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Saumya Chitrakar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
-        
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg: #080a0f;
+            --surface: #0e1118;
+            --surface2: #141720;
+            --border: rgba(255,255,255,0.06);
+            --border-hover: rgba(255,255,255,0.14);
+            --text: #e8eaf0;
+            --muted: #6b7280;
+            --accent: #6ee7b7;
+            --accent2: #818cf8;
+            --accent3: #f472b6;
+        }
+
         body {
-            background-color: #0d1117;
-            background-image: radial-gradient(circle at 50% -20%, #161b22 0%, #0d1117 100%);
-            min-height: 100vh;
+            background: var(--bg);
+            color: var(--text);
             font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
             overflow-x: hidden;
         }
 
-        .bg-glow {
+        body::before {
+            content: '';
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/stardust.png');
-            opacity: 0.1;
+            top: -30%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(110,231,183,0.055) 0%, rgba(129,140,248,0.04) 40%, transparent 70%);
             pointer-events: none;
             z-index: 0;
         }
 
-        .glass {
-            background: rgba(22, 27, 34, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .glass:hover {
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            background: rgba(22, 27, 34, 0.8);
-        }
-
-        .nitro-wrapper {
+        .container {
             position: relative;
-            width: 120px;
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            overflow: hidden;
-            padding: 4px; 
             z-index: 1;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
         }
 
-        .nitro-wrapper::before {
+        .hero {
+            padding: 72px 0 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .avatar-ring {
+            position: relative;
+            width: 108px;
+            height: 108px;
+            margin-bottom: 24px;
+        }
+
+        .avatar-ring::before {
             content: '';
             position: absolute;
-            width: 160%;
-            height: 160%;
-            background: conic-gradient(from 180deg, #ff00d0, #00d4ff, #7000ff, #ff00d0);
-            animation: rotate 4s linear infinite;
+            inset: -3px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, var(--accent), var(--accent2), var(--accent3), var(--accent));
+            animation: spin 6s linear infinite;
         }
 
-        .profile-img {
+        .avatar-ring::after {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, var(--accent), var(--accent2), var(--accent3), var(--accent));
+            animation: spin 6s linear infinite;
+            filter: blur(8px);
+            opacity: 0.5;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .avatar-ring img {
             position: relative;
-            z-index: 10;
+            z-index: 2;
             width: 100%;
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #0d1117;
+            border: 3px solid var(--bg);
         }
 
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        .status-dot {
+            position: absolute;
+            bottom: 5px; right: 5px;
+            z-index: 3;
+            width: 14px; height: 14px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 2px solid var(--bg);
+            box-shadow: 0 0 8px var(--accent);
         }
 
-        .gradient-text {
-            background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        h1 {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #fff;
+            margin-bottom: 6px;
         }
+
+        .tagline {
+            font-size: 14px;
+            color: var(--muted);
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .badge-row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .badge {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 100px;
+            border: 1px solid;
+        }
+
+        .badge-green  { background: rgba(110,231,183,0.08); color: var(--accent);  border-color: rgba(110,231,183,0.2); }
+        .badge-indigo { background: rgba(129,140,248,0.08); color: var(--accent2); border-color: rgba(129,140,248,0.2); }
+        .badge-pink   { background: rgba(244,114,182,0.08); color: var(--accent3); border-color: rgba(244,114,182,0.2); }
+
+        .section-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .links-section { margin-bottom: 32px; }
+
+        .link-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 18px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            text-decoration: none;
+            color: var(--text);
+            margin-bottom: 10px;
+            transition: border-color 0.2s, background 0.2s, transform 0.15s;
+        }
+
+        .link-card:hover {
+            border-color: var(--border-hover);
+            background: var(--surface2);
+            transform: translateY(-1px);
+        }
+
+        .link-left { display: flex; align-items: center; gap: 14px; }
+
+        .link-icon {
+            width: 38px; height: 38px;
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .link-icon.ig   { background: rgba(244,114,182,0.1); color: var(--accent3); }
+        .link-icon.gh   { background: rgba(255,255,255,0.05); color: #fff; }
+        .link-icon.mail { background: rgba(129,140,248,0.1); color: var(--accent2); }
+
+        .link-title { font-weight: 600; font-size: 14px; }
+        .link-sub   { font-size: 12px; color: var(--muted); margin-top: 1px; }
+
+        .arrow-icon { color: var(--muted); font-size: 12px; transition: color 0.2s, transform 0.2s; }
+        .link-card:hover .arrow-icon { color: var(--text); transform: translateX(2px); }
+
+        .projects-section { margin-bottom: 32px; }
+
+        .project-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 18px 20px;
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+            transition: border-color 0.2s, background 0.2s, transform 0.15s;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 3px; height: 100%;
+            background: linear-gradient(to bottom, var(--accent), var(--accent2));
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .project-card:hover {
+            border-color: var(--border-hover);
+            background: var(--surface2);
+            transform: translateY(-1px);
+        }
+
+        .project-card:hover::before { opacity: 1; }
+
+        .project-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .project-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .project-link-icon {
+            color: var(--muted);
+            font-size: 12px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            transition: color 0.2s;
+        }
+
+        .project-card:hover .project-link-icon { color: var(--accent); }
+
+        .project-desc {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        .project-meta {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .lang-dot {
+            width: 9px; height: 9px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .lang-label {
+            font-size: 12px;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .coming-soon {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px 18px;
+            border: 1px dashed rgba(255,255,255,0.08);
+            border-radius: 14px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .coming-soon-dot {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: var(--accent2);
+            flex-shrink: 0;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50%       { opacity: 0.9; }
+        }
+
+        .share-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(110,231,183,0.15), rgba(129,140,248,0.15));
+            border: 1px solid rgba(110,231,183,0.25);
+            border-radius: 14px;
+            color: #fff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .share-btn:hover {
+            background: linear-gradient(135deg, rgba(110,231,183,0.22), rgba(129,140,248,0.22));
+            border-color: rgba(110,231,183,0.4);
+            transform: translateY(-1px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 48px;
+            font-size: 11px;
+            color: var(--muted);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(16px);
+            animation: fadeUp 0.5s ease forwards;
+        }
+
+        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
     </style>
 </head>
-<body class="text-gray-200 flex flex-col items-center p-6 relative">
-    <div class="bg-glow"></div>
+<body>
+<div class="container">
 
-    <div class="z-10 w-full max-w-md flex flex-col items-center">
-        
-        <div class="mt-12 flex flex-col items-center text-center">
-            <div class="nitro-wrapper shadow-[0_0_30px_rgba(112,0,255,0.3)] mb-6">
-                <img src="https://imgs.search.brave.com/JNgJ7uPlIxfySw5dR05vv7X8tFXcX76D517hYs26hJU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2I0LzM3/L2JhL2I0MzdiYWUy/ZWNlMTlmN2M1ZDRh/YjUxMTNkNDRhMzkz/LmpwZw" alt="Saumya" class="profile-img">
-            </div>
-            
-            <h1 class="text-3xl font-extrabold gradient-text tracking-tight">Saumya Chitrakar</h1>
-            <p class="text-gray-400 mt-2 font-medium">BCA Student @ TU</p>
+    <div class="hero fade-in">
+        <div class="avatar-ring">
+            <img src="https://imgs.search.brave.com/JNgJ7uPlIxfySw5dR05vv7X8tFXcX76D517hYs26hJU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2I0LzM3/L2JhL2I0MzdiYWUy/ZWNlMTlmN2M1ZDRh/YjUxMTNkNDRhMzkz/LmpwZw" alt="Saumya Chitrakar">
+            <div class="status-dot"></div>
         </div>
-
-        <div class="w-full mt-8 space-y-4">
-            
-            <div class="glass p-5 rounded-3xl">
-                <h3 class="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 mb-3">Learning Journey</h3>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-cyan-500/10 text-cyan-400 px-3 py-1.5 rounded-xl text-xs font-bold border border-cyan-500/20">
-                        <i class="fab fa-react mr-1"></i> React
-                    </span>
-                    <span class="bg-orange-500/10 text-orange-400 px-3 py-1.5 rounded-xl text-xs font-bold border border-orange-500/20">
-                        <i class="fab fa-java mr-1"></i> Java
-                    </span>
-                    <span class="bg-blue-500/10 text-blue-400 px-3 py-1.5 rounded-xl text-xs font-bold border border-blue-500/20">Web Dev</span>
-                </div>
-            </div>
-
-            <a href="https://www.instagram.com/xyyzzzz1_/" class="glass w-full py-4 px-6 rounded-2xl flex items-center justify-between group">
-                <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 rounded-xl bg-pink-500/10 flex items-center justify-center">
-                        <i class="fab fa-instagram text-pink-500"></i>
-                    </div>
-                    <span class="font-bold">Instagram</span>
-                </div>
-                <i class="fas fa-arrow-right text-gray-700 group-hover:text-white transition-colors"></i>
-            </a>
-
-            <a href="https://github.com/sauch0" class="glass w-full py-4 px-6 rounded-2xl flex items-center justify-between group">
-                <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center">
-                        <i class="fab fa-github text-white"></i>
-                    </div>
-                    <span class="font-bold">GitHub</span>
-                </div>
-                <i class="fas fa-arrow-right text-gray-700 group-hover:text-white transition-colors"></i>
-            </a>
-
-            <a href="mailto:chitrakarsaumya2004@gmail.com" class="glass w-full py-4 px-6 rounded-2xl flex items-center justify-between group">
-                <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center">
-                        <i class="fas fa-envelope text-blue-400"></i>
-                    </div>
-                    <span class="font-bold">Email Me</span>
-                </div>
-                <i class="fas fa-arrow-right text-gray-700 group-hover:text-white transition-colors"></i>
-            </a>
-
-            <button id="shareBtn" class="w-full bg-white text-black font-extrabold py-4 rounded-2xl hover:bg-blue-400 hover:text-white transition-all duration-300 shadow-xl flex items-center justify-center gap-2 mt-4">
-                <i class="fas fa-paper-plane"></i> Share Profile
-            </button>
-
+        <h1>Saumya Chitrakar</h1>
+        <p class="tagline">BCA Student @ Tribhuvan University</p>
+        <div class="badge-row">
+            <span class="badge badge-green"><i class="fab fa-react" style="margin-right:5px;font-size:10px;"></i>React</span>
+            <span class="badge badge-indigo"><i class="fab fa-java" style="margin-right:5px;font-size:10px;"></i>Java</span>
+            <span class="badge badge-pink">Web Dev</span>
         </div>
-
-        <footer class="mt-20 pb-10 text-center">
-            <p class="text-gray-600 text-[10px] uppercase tracking-widest font-bold flex items-center gap-2">
-                Saumya Chitrakar<span class="w-1 h-1 bg-gray-600 rounded-full"></span> 2026
-            </p>
-        </footer>
     </div>
 
-    <script>
-        document.getElementById('shareBtn').addEventListener('click', () => {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Saumya Chitrakar Portfolio',
-                    url: window.location.href
-                });
-            } else {
-                navigator.clipboard.writeText(window.location.href);
-                alert('Link copied to clipboard!');
-            }
-        });
-    </script>
+    <div class="links-section fade-in delay-1">
+        <p class="section-label">Connect</p>
+
+        <a href="https://www.instagram.com/xyyzzzz1_/" class="link-card" target="_blank" rel="noopener">
+            <div class="link-left">
+                <div class="link-icon ig"><i class="fab fa-instagram"></i></div>
+                <div>
+                    <div class="link-title">Instagram</div>
+                    <div class="link-sub">@xyyzzzz1_</div>
+                </div>
+            </div>
+            <i class="fas fa-arrow-right arrow-icon"></i>
+        </a>
+
+        <a href="https://github.com/sauch0" class="link-card" target="_blank" rel="noopener">
+            <div class="link-left">
+                <div class="link-icon gh"><i class="fab fa-github"></i></div>
+                <div>
+                    <div class="link-title">GitHub</div>
+                    <div class="link-sub">sauch0</div>
+                </div>
+            </div>
+            <i class="fas fa-arrow-right arrow-icon"></i>
+        </a>
+
+        <a href="mailto:chitrakarsaumya2004@gmail.com" class="link-card">
+            <div class="link-left">
+                <div class="link-icon mail"><i class="fas fa-envelope"></i></div>
+                <div>
+                    <div class="link-title">Email Me</div>
+                    <div class="link-sub">chitrakarsaumya2004@gmail.com</div>
+                </div>
+            </div>
+            <i class="fas fa-arrow-right arrow-icon"></i>
+        </a>
+    </div>
+
+    <div class="projects-section fade-in delay-2">
+        <p class="section-label">Projects</p>
+
+        <a href="https://github.com/sauch0/shopesp" class="project-card" target="_blank" rel="noopener">
+            <div class="project-header">
+                <span class="project-name">ShopEsp</span>
+                <i class="fas fa-arrow-up-right-from-square project-link-icon"></i>
+            </div>
+            <p class="project-desc">A full-featured ecommerce platform with product listings, cart, and checkout — built with PHP.</p>
+            <div class="project-meta">
+                <span class="lang-label">
+                    <span class="lang-dot" style="background:#4F5D95;"></span>
+                    PHP
+                </span>
+            </div>
+        </a>
+
+        <div class="coming-soon">
+            <span class="coming-soon-dot"></span>
+            More projects in development — check back soon.
+        </div>
+    </div>
+
+    <div class="fade-in delay-3">
+        <button class="share-btn" id="shareBtn">
+            <i class="fas fa-paper-plane"></i> Share Profile
+        </button>
+    </div>
+
+    <footer class="fade-in delay-4">Saumya Chitrakar &nbsp;·&nbsp; 2026</footer>
+</div>
+
+<script>
+    document.getElementById('shareBtn').addEventListener('click', () => {
+        if (navigator.share) {
+            navigator.share({ title: 'Saumya Chitrakar', url: window.location.href });
+        } else {
+            navigator.clipboard.writeText(window.location.href);
+            const btn = document.getElementById('shareBtn');
+            btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            setTimeout(() => btn.innerHTML = '<i class="fas fa-paper-plane"></i> Share Profile', 2000);
+        }
+    });
+</script>
 </body>
 </html>
