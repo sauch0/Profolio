@@ -194,7 +194,7 @@
             flex-shrink: 0;
         }
 
-        .link-icon.ig   { background: rgba(244,114,182,0.1); color: var(--accent3); }
+        .link-icon.li   { background: rgba(10,102,194,0.15); color: #0a66c2; }
         .link-icon.gh   { background: rgba(255,255,255,0.05); color: #fff; }
         .link-icon.mail { background: rgba(129,140,248,0.1); color: var(--accent2); }
 
@@ -289,30 +289,6 @@
             gap: 5px;
         }
 
-        .coming-soon {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 13px 18px;
-            border: 1px dashed rgba(255,255,255,0.08);
-            border-radius: 14px;
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        .coming-soon-dot {
-            width: 7px; height: 7px;
-            border-radius: 50%;
-            background: var(--accent2);
-            flex-shrink: 0;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.3; }
-            50%       { opacity: 0.9; }
-        }
-
         .share-btn {
             width: 100%;
             padding: 15px;
@@ -381,12 +357,13 @@
     <div class="links-section fade-in delay-1">
         <p class="section-label">Connect</p>
 
-        <a href="https://www.instagram.com/xyyzzzz1_/" class="link-card" target="_blank" rel="noopener">
+        <!-- 🔗 Replace YOUR_LINKEDIN_USERNAME with your actual LinkedIn username -->
+        <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME" class="link-card" target="_blank" rel="noopener">
             <div class="link-left">
-                <div class="link-icon ig"><i class="fab fa-instagram"></i></div>
+                <div class="link-icon li"><i class="fab fa-linkedin-in"></i></div>
                 <div>
-                    <div class="link-title">Instagram</div>
-                    <div class="link-sub">@xyyzzzz1_</div>
+                    <div class="link-title">LinkedIn</div>
+                    <div class="link-sub">Saumya Chitrakar</div>
                 </div>
             </div>
             <i class="fas fa-arrow-right arrow-icon"></i>
@@ -418,7 +395,35 @@
     <div class="projects-section fade-in delay-2">
         <p class="section-label">Projects</p>
 
-        <a href="https://github.com/sauch0/shopesp" class="project-card" target="_blank" rel="noopener">
+        <a href="https://github.com/sauch0/Artsly" class="project-card" target="_blank" rel="noopener">
+            <div class="project-header">
+                <span class="project-name">Artsly</span>
+                <i class="fas fa-arrow-up-right-from-square project-link-icon"></i>
+            </div>
+            <p class="project-desc">A C2C e-commerce platform connecting artists and buyers. Features user auth, artist KYC verification, artwork upload, search/filter/sort, cart and order management.</p>
+            <div class="project-meta">
+                <span class="lang-label">
+                    <span class="lang-dot" style="background:#4F5D95;"></span>
+                    PHP
+                </span>
+            </div>
+        </a>
+
+        <a href="https://github.com/sauch0/intelligent-task-priotizer" class="project-card" target="_blank" rel="noopener">
+            <div class="project-header">
+                <span class="project-name">Intelligent Task Prioritizer</span>
+                <i class="fas fa-arrow-up-right-from-square project-link-icon"></i>
+            </div>
+            <p class="project-desc">A smart full-stack task manager that uses a custom scoring algorithm to auto-rank tasks by urgency, importance, and quick-win potential.</p>
+            <div class="project-meta">
+                <span class="lang-label">
+                    <span class="lang-dot" style="background:#f1e05a;"></span>
+                    JavaScript
+                </span>
+            </div>
+        </a>
+
+        <a href="https://github.com/sauch0/Shopesp" class="project-card" target="_blank" rel="noopener">
             <div class="project-header">
                 <span class="project-name">ShopEsp</span>
                 <i class="fas fa-arrow-up-right-from-square project-link-icon"></i>
@@ -432,10 +437,19 @@
             </div>
         </a>
 
-        <div class="coming-soon">
-            <span class="coming-soon-dot"></span>
-            More projects in development — check back soon.
-        </div>
+        <a href="https://github.com/sauch0/Esewa_Integration" class="project-card" target="_blank" rel="noopener">
+            <div class="project-header">
+                <span class="project-name">eSewa Integration</span>
+                <i class="fas fa-arrow-up-right-from-square project-link-icon"></i>
+            </div>
+            <p class="project-desc">Payment gateway integration with eSewa — Nepal's leading digital wallet — for seamless online transactions.</p>
+            <div class="project-meta">
+                <span class="lang-label">
+                    <span class="lang-dot" style="background:#e34c26;"></span>
+                    HTML
+                </span>
+            </div>
+        </a>
     </div>
 
     <div class="fade-in delay-3">
