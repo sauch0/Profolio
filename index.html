@@ -622,6 +622,8 @@
       padding: 1.6rem;
       display: flex;
       flex-direction: column;
+      text-decoration: none;
+      color: inherit;
     }
 
     .project-image-placeholder {
@@ -717,7 +719,8 @@
       transition: color 0.2s, border-color 0.2s, background 0.2s;
     }
 
-    .project-link:hover {
+    .project-link:hover,
+    .project-card:hover .project-link {
       color: var(--text);
       border-color: var(--border2);
       background: var(--surface3);
@@ -1181,7 +1184,7 @@
 <body>
 
   <nav>
-    <div class="nav-logo">saumya.dev</div>
+    <div class="nav-logo">saumya1.com.np</div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -1213,11 +1216,11 @@
     <div class="hero-content fade-in">
       <div class="hero-badge">
         <span class="live-dot"></span>
-        BCA Student · Open to Internships
+        BCA Student @ TU
       </div>
       <h1>
         Hi, I'm <span class="name">Saumya Chitrakar</span>
-        <span class="role">Aspiring Developer</span>
+        <span class="role">Web Developer</span>
       </h1>
       <p class="hero-desc">
         I build clean, functional web apps and love solving problems through code. Currently pursuing BCA and exploring
@@ -1239,12 +1242,12 @@
       <div class="terminal-body">
 
         <pre><code>{
-  <span class="key">"name"</span>: <span class="val">"Saumya Chitrakar"</span>,
-  <span class="key">"role"</span>: <span class="val">"Frontend Dev"</span>,
-  <span class="key">"Location"</span>: <span class="val">"Lalitpur, Nepal"</span>,
-  <span class="key">"status"</span>: <span class="val">"BCA Student"</span>,
-  <span class="key">"skills"</span>: [<span class="val">"JS"</span>, <span class="val">"React"</span>, <span class="val">"PHP"</span>]
-}</code></pre>
+    <span class="key">"name"</span>: <span class="val">"Saumya Chitrakar"</span>,
+    <span class="key">"role"</span>: <span class="val">"Web Dev"</span>,
+    <span class="key">"origin"</span>: <span class="val">"Lalitpur, Nepal"</span>,
+    <span class="key">"status"</span>: <span class="val">"BCA Student"</span>,
+    <span class="key">"skills"</span>: [<span class="val">"JS"</span>, <span class="val">"React"</span>, <span class="val">"PHP"</span>]
+  }</code></pre>
       </div>
     </div>
 
@@ -1305,7 +1308,7 @@
     <h2 class="section-title fade-in">Projects</h2>
     <p class="section-sub fade-in">A few things I've worked on — academic and personal.</p>
     <div class="projects-grid">
-      <div class="project-card card fade-in">
+      <a href="https://github.com/sauch0/Artsly" target="_blank" class="project-card card fade-in">
         <!-- <div class="project-image-placeholder"><i class="ti ti-palette"></i></div> -->
         <span class="project-tag">Web App</span>
         <h3>Artsly - C2C Ecommerce System</h3>
@@ -1314,12 +1317,11 @@
           <span class="pill">PHP</span><span class="pill">MySQL</span><span class="pill">CSS3</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/sauch0/Artsly" class="project-link"><i class="ti ti-brand-github"></i>
-            GitHub</a>
+          <span class="project-link"><i class="ti ti-brand-github"></i> GitHub</span>
         </div>
-      </div>
+      </a>
 
-      <div class="project-card card fade-in">
+      <a href="https://github.com/sauch0/Shopesp" target="_blank" class="project-card card fade-in">
         <!-- <div class="project-image-placeholder"><i class="ti ti-shopping-cart"></i></div> -->
         <span class="project-tag">Full Stack</span>
         <h3>Shopesp</h3>
@@ -1329,25 +1331,24 @@
           <span class="pill">PHP</span><span class="pill">CSS</span><span class="pill">MySQL</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/sauch0/Shopesp" class="project-link"><i class="ti ti-brand-github"></i>
-            GitHub</a>
+          <span class="project-link"><i class="ti ti-brand-github"></i> GitHub</span>
         </div>
-      </div>
+      </a>
 
-      <div class="project-card card fade-in">
+      <a href="https://github.com/sauch0/intelligent-task-prioritizer" target="_blank"
+        class="project-card card fade-in">
         <!-- <div class="project-image-placeholder"><i class="ti ti-list-check"></i></div> -->
         <span class="project-tag">Full Stack</span>
         <h3>Todo App with Auth</h3>
         <p>A smart, full-stack task management application that uses a custom scoring algorithm to automatically rank
           your tasks by urgency, importance, and "quick win" potential.</p>
         <div class="tech-stack">
-          <span class="pill">React</span><span class="pill">Node.js</span><span class="pill">MongoDB</span>
+          <span class="pill">React</span><span class="pill">PHP</span><span class="pill">MySQL</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/sauch0/intelligent-task-prioritizer" class="project-link"><i
-              class="ti ti-brand-github"></i> GitHub</a>
+          <span class="project-link"><i class="ti ti-brand-github"></i> GitHub</span>
         </div>
-      </div>
+      </a>
     </div>
   </section>
 
